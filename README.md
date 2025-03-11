@@ -29,6 +29,7 @@ docker run -d \
   -e POSTGRES_DB=devdb \
   -v postgres-data:/var/lib/postgresql/data \
   postgres:latest
+
 ```
 
 ---
@@ -37,8 +38,9 @@ docker run -d \
 
 Clona el repositorio:
 ```sh
-git clone https://github.com/ajmaestre/devapi.git
-cd devapi
+git clone https://github.com/orenarounicesar/devops202501-php.git
+cd devops202501-php
+
 ```
 
 ---
@@ -48,6 +50,7 @@ cd devapi
 2️⃣ Construye la imagen:
 ```sh
 docker build . -t devapi
+
 ```
 
 ---
@@ -66,6 +69,7 @@ docker run -d --name dev-api --network=dev-red -p 80:80 devapi
 
 ```sh
 docker ps
+
 ```
 
 Si todo está bien, verás los contenedores `postgres-db` y `dev-api` en ejecución.
@@ -73,6 +77,7 @@ Si todo está bien, verás los contenedores `postgres-db` y `dev-api` en ejecuci
 Para acceder a PostgreSQL dentro del contenedor:
 ```sh
 docker exec -it postgres-db psql -U postgres -d devdb
+
 ```
 
 ---
